@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateProgress() {
         const tasks = document.querySelectorAll(".task");
         const totalTasks = tasks.length;
-        const completedTasks = documentSelectorAll(".completed").length;
+        const completedTasks = document.querySelectorAll(".completed").length;
         const progress = (completedTasks / totalTasks) * 100;
 
         progressBar.value = progress;
-        progressText.textCOntent = `${Math.round(progress)}% complete`;
+        progressText.textContent = `${Math.round(progress)}% complete`;
     }
 
     function toggleCompletion() {
@@ -25,13 +25,13 @@ document.addEventListener("DOMContentLoaded", function () {
         <span>${taskName}</span>
         <input type="checkbox">
         `;
-        taskElement.querySelector("input").addEventListener("change", toggleTaskCompletion);
+        taskElement.querySelector("input").addEventListener("change", toggleCompletion);
 
         return taskElement;
     }
 
     function addTask(taskName) {
-        const taskElement = createTaskElement(taskName);
+        const taskElement = createTasksElement(taskName);
         tasksContainer.appendChild(taskElement);
         updateProgress();
     }
