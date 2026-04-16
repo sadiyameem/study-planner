@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Study Planner</title>
-<body>
-    <div class="container">
 
-        <h1>Study Planner</h1>
-        <input type="text" id="todoTask" class="todo-input" placeholder="Add your tasks" />
-        <button>Add task</button>
-        
-        <div id="tasks"></div>
+    <!--covert to downloadable pdf file-->
+    <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" 
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
 
-        <div id="progress">
-            <h2>Progress Bar Tracker</h2>
-            <progress id="progressBar" value="0" max="100"></progress>
-            <p id="progressText">0% complete</p>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
+<!--pdf generator in JavaScript-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" 
+integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" 
+crossorigin="anonymous" 
+referrerpolicy="no-referrer">
+</script>
+</head>
 </html>
