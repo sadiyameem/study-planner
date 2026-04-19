@@ -115,19 +115,19 @@ downloadBtn.addEventListener("click", () => {
 
     let content = `
     <div style="padding: 1rem; font-family: 'Segoe UI', sans-serif;">
-    <h1 style="text-align: center; color: #7b4ca0;">Weekly Study Timetable</h1>
+    <h1 style="text-align: center; color: #5f7a61;">Weekly Study Timetable</h1>
     `;
 
     for (const day of Object.keys(groupedEntries)) {
         const dayEntries = groupedEntries[day];
 
-        content += `<h2 style="color: #5f3d90; margin-top: 1rem;">${day}</h2>`;
+        content += `<h2 style="color: #4f6651; margin-top: 1rem;">${day}</h2>`;
         if(dayEntries.length === 0) {
             content += `<p>No entries.</p>`;
         } else {
             dayEntries.forEach(entry => {
                 content += `
-                <div style="background: #f8f1fa; padding: 10px; margin: 8px 0; border-left: 4px solid #a074c4; border-radius: 8px;">
+                <div style="background: #eef4ea; padding: 10px; margin: 8px 0; border-left: 4px solid #7d9b76; border-radius: 8px;">
                     <strong>Subject:</strong> ${entry.subject}<br/>
                     <strong>Time:</strong> ${entry.time}<br/>
                     <strong>Goal:</strong> ${entry.goal}

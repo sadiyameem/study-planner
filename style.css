@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #fef8f5;
+    background-color: #f4f7f2;
     color: #333;
     padding: 2rem;
 }
@@ -14,7 +14,7 @@ body {
 .container {
     max-width: 800px;
     margin: auto;
-    background: #fffdfc;
+    background: #ffffff;
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
@@ -23,7 +23,7 @@ body {
 h1, h2 {
     text-align: center;
     margin-bottom: 1.5rem;
-    color: #7b4ca0;
+    color: #5f7a61;
 }
 
 .day-selector {
@@ -38,15 +38,15 @@ h1, h2 {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 20px;
-    background-color: #f2e3fa;
-    color: #6b479c;
+    background-color: #dfe8da;
+    color: #4f6651;
     cursor: pointer;
     transition: 0.3s ease;
     font-weight: bold;
 }
 
 .day-btn.active {
-    background-color: #a074c4;
+    background-color: #7d9b76;
     color: #fff;
 }
 
@@ -65,7 +65,7 @@ h1, h2 {
 }
 
 #add-btn {
-    background-color: #a074c4;
+    background-color: #7d9b76;
     color: #fff;
     padding: 0.8rem;
     border: none;
@@ -76,7 +76,7 @@ h1, h2 {
 }
 
 #add-btn:hover {
-    background-color: #8a5baa;
+    background-color: #688260;
 }
 
 .time-slot-generate {
@@ -99,8 +99,8 @@ h1, h2 {
 
 #generate-slot {
     padding: 0.5rem 1rem;
-    background-color: #ded3f7;
-    color: #5f3d90;
+    background-color: #dbe6d4;
+    color: #4f6651;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -109,7 +109,7 @@ h1, h2 {
 }
 
 #generate-slot:hover {
-    background-color: #b8a1e3;
+    background-color: #bfd0b5;
 }
 
 .timetable {
@@ -123,8 +123,8 @@ h1, h2 {
 }
 
 .entry-card {
-    background-color: #f8f1fa;
-    border-left: 6px solid #ae74c4;
+    background-color: #eef4ea;
+    border-left: 6px solid #7d9b76;
     padding: 1rem;
     border-radius: 10px;
     animation: fadeIn 0.4s ease;
@@ -160,7 +160,7 @@ h1, h2 {
 }
 
 #download-pdf {
-    background-color: #a074c4;
+    background-color: #7d9b76;
     color: #fff;
     padding: 0.8rem 1.2rem;
     border: none;
@@ -172,6 +172,6 @@ h1, h2 {
 }
 
 #download-pdf:hover {
-    background-color: #8a5baa;
+    background-color: #688260;
 }
 
