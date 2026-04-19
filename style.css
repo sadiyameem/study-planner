@@ -79,25 +79,25 @@ h1, h2 {
     background-color: #8a5baa;
 }
 
-.time-slot-genrator {
+.time-slot-generate {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     align-items: center;
 }
 
-.time-slot-genrator label {
+.time-slot-generate label {
     font-size: 0.95rem;
 }
 
-.time-slot-genrator select,
-.time-slot-generator input[type="time"] {
+.time-slot-generate select,
+.time-slot-generate input[type="time"] {
     padding: 0.4rem;
     border-radius: 8px;
     border: 1px solid #ccc;
 }
 
-#generator-slot {
+#generate-slot {
     padding: 0.5rem 1rem;
     background-color: #ded3f7;
     color: #5f3d90;

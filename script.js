@@ -14,7 +14,7 @@ dayButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
         dayButtons.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
-        currentDay = btn.CDATA_SECTION_NODE.day;
+        currentDay = btn.dataset.day;
         renderEntries();
     });
 });
@@ -23,7 +23,7 @@ dayButtons.forEach((btn) => {
 addBtn.addEventListener("click" , () => {
     const subject = subjectInput.value.trim();
     const time = timeInput.value.trim();
-    const goal = timeInput.value.trim();
+    const goal = goalInput.value.trim();
 
     if (!subject || !time || !goal) {
         alert("Please fill in the blanks!");
@@ -58,7 +58,7 @@ function renderEntries() {
 
         card.innerHTML = `
         <label class="checkbox-label">
-            <input type="checkbox" class="task-check" data-index="${index}" ${entry.completed ? 'chekced' : ''}>
+            <input type="checkbox" class="task-check" data-index="${index}" ${entry.completed ? 'checked' : ''}>
             <div class="entry-content ${entry.completed ? 'completed' : ''}">
                 <h3>${entry.subject}</h3>
                 <p><strong>Time:</strong> ${entry.time}</p>
@@ -103,9 +103,9 @@ generateSlotBtn.addEventListener("click", () => {
     const endDate = new Date(startDate.getTime() + duration * 60000);
 
     const formatTime = (date) =>
-        date.toLocalTimeString({}, {hour: "2-digit", minute: "2-digit"});
+        date.toLocaleTimeString({}, {hour: "2-digit", minute: "2-digit"});
 
-    const timeSlot = `${formatTime(startDate)} - ${formateTime(endDate)}`;
+    const timeSlot = `${formatTime(startDate)} - ${formatTime(endDate)}`;
     timeInput.value = timeSlot;
 });
 
@@ -147,7 +147,7 @@ downloadBtn.addEventListener("click", () => {
         jsPDF: {unit: 'in', format: 'a4', orientation: 'portrait'}
     };
 
-    html2PDF().from(content).set(opt).save();
+    html2pdf().from(content).set(opt).save();
 });
 
 // group entries by day
