@@ -150,3 +150,21 @@ downloadBtn.addEventListener("click", () => {
     html2PDF().from(content).set(opt).save();
 });
 
+// group entries by day
+function groupEntriesByDay() {
+    const grouped = {
+        Monday: [],
+        Tuesday: [],
+        Wednesday: [],
+        Thursday: [],
+        Friday: [],
+        Saturday: [],
+        Sunday: [],
+    };
+
+    entries.forEach(entry => {
+        grouped[entry.day].push(entry);
+    });
+
+    return grouped;
+}
