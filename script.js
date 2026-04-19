@@ -82,3 +82,71 @@ function renderEntries() {
 }
 
 // time slot generator
+const startTimeInput = document.getElementById("start-time");
+const durationInput = document.getElementById("duration");
+const generateSlotBtn = document.getElementById("generate-slot");
+
+generateSlotBtn.addEventListener("click", () => {
+    const startTime = startTimeInput.value;
+    const duration = parseInt(durationInput.value);
+
+    if (!startTime || isNaN(duration)) {
+        alert("Please select both a start time and duration");
+        return;
+    }
+
+    const [hours, minutes] = startTime.split(":").map(Number);
+    const startDate = new Date();
+    startDate.setHours(hours);
+    startDate.setMinutes(minutes);
+
+    const endDate = new Date(startDate.getTime() + duration * 60000);
+
+    const formatTime = (date) =>
+        date.toLocalTimeString({}, {hour: "2-digit", minute: "2-digit"});
+
+    const timeSlot = `${formatTime(startDate)} - ${formateTime(endDate)}`;
+    timeInput.value = timeSlot;
+});
+
+// download weekly timetable as pdf
+downloadBtn.addEventListener("click", () => {
+    const groupedEntries = groupEntriesByDay();
+
+    let content = `
+    <div style="padding: 1rem; font-family: 'Segoe UI', sans-serif;">
+    <h1 style="text-align: center; color: #7b4ca0;">Weekly Study Timetable</h1>
+    `;
+
+    for (const day of Object.keys(groupedEntries)) {
+        const dayEntries = groupedEntries[day];
+
+        content += `<h2 style="color: #5f3d90; margin-top: 1rem;">${day}</h2>`;
+        if(dayEntries.length === 0) {
+            content += `<p>No entries.</p>`;
+        } else {
+            dayEntries.forEach(entry => {
+                content += `
+                <div style="background: #f8f1fa; padding: 10px; margin: 8px 0; border-left: 4px solid #a074c4; border-radius: 8px;">
+                    <strong>Subject:</strong> ${entry.subject}<br/>
+                    <strong>Time:</strong> ${entry.time}<br/>
+                    <strong>Goal:</strong> ${entry.goal}
+                    </div>
+                    `;
+            });
+        }
+    }
+
+    content += `</div>`;
+
+    const opt = {
+        margin: 0.5,
+        filename: 'Weekly_Timetable.pdf',
+        image: {type: 'jpeg', quality: 0.98},
+        html2canvas: {scale:2},
+        jsPDF: {unit: 'in', format: 'a4', orientation: 'portrait'}
+    };
+
+    html2PDF().from(content).set(opt).save();
+});
+
