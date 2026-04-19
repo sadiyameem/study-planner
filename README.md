@@ -3,7 +3,7 @@
 # Description
 - This is a simple web-based study planner that helps people organize their study schedule. Users can add subjects, set goals, generate time, track completion and download their timetable as a pdf.
 
-- # Features
+ # Features
  - Weekly day selector
   - Add study tasks (subject, time and goal or task)
   - Time slot generator (start time and duration)
